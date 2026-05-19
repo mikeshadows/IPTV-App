@@ -1,0 +1,6 @@
+{
+  "name": "TiviStream IPTV",
+  "description": "A premium, simplified IPTV player designed for the 10-foot experience, inspired by TiviMate.",
+  "requestFramePermissions": [],
+  "majorCapabilities": ["MAJOR_CAPABILITY_SERVER_SIDE_GEMINI_API"]
+}

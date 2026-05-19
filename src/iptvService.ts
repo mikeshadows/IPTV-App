@@ -20,7 +20,7 @@ export const fetchIPTV = async (creds: Credentials, action?: string, categoryId?
   if (action) params.append('action', action);
   if (categoryId) params.append('category_id', categoryId);
 
-  const response = await fetch(`/api/iptv?${params.toString()}`);
+  const response = await fetch(`https://iptv-app-1isz.onrender.com/api/iptv?${params.toString()}`);
   if (!response.ok) {
     const errorData = await response.json().catch(() => ({}));
     throw new Error(errorData.error || errorData.details || `Server Error: ${response.status}`);
@@ -37,7 +37,7 @@ export const fetchEPG = async (creds: Credentials, streamId: string) => {
     stream_id: streamId,
   });
 
-  const response = await fetch(`/api/iptv?${params.toString()}`);
+  const response = await fetch(`https://iptv-app-1isz.onrender.com/api/iptv?${params.toString()}`);
   if (!response.ok) return null;
   return response.json();
 };
@@ -166,7 +166,7 @@ export const fetchSeriesInfo = async (creds: Credentials, seriesId: string) => {
     series_id: seriesId,
   });
 
-  const response = await fetch(`/api/iptv?${params.toString()}`);
+  const response = await fetch(`https://iptv-app-1isz.onrender.com/api/iptv?${params.toString()}`);
   if (!response.ok) return null;
   return response.json();
 };

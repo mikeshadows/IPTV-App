@@ -31,6 +31,12 @@ async function startServer() {
   const app = (0, import_express.default)();
   const PORT = 3e3;
   app.use(import_express.default.json());
+  app.use((req, res, next) => {
+    res.header("Access-Control-Allow-Origin", "https://mikeshadows.github.io");
+    res.header("Access-Control-Allow-Methods", "GET, POST, OPTIONS");
+    res.header("Access-Control-Allow-Headers", "Content-Type");
+    next();
+  });
   app.get("/api/iptv", async (req, res) => {
     let { url, username, password, ...rest } = req.query;
     if (!url || !username || !password) {
